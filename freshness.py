@@ -140,6 +140,29 @@ def crawl_site(start_url):
     return df, output_file
 
 
+def crawl_sites(start_urls):
+    all_frames = []
+    output_files = []
+
+    for start_url in start_urls:
+        df, output_file = crawl_site(start_url)
+        if not df.empty:
+            df = df.copy()
+            df.insert(0, "Site", urlparse(start_url).netloc.replace("www.", ""))
+        all_frames.append(df)
+        output_files.append(output_file)
+
+    if all_frames:
+        combined_df = pd.concat(all_frames, ignore_index=True)
+    else:
+        combined_df = pd.DataFrame(columns=["Site", "URL", "Date Publication", "Date Modification", "Status Code"])
+
+    combined_output_file = "multiple_sites_dates.csv"
+    combined_df.to_csv(combined_output_file, index=False, encoding="utf-8")
+
+    return combined_df, combined_output_file, output_files
+
+
 if __name__ == "__main__":
     args = parse_args()
     crawl_site(normalize_start_url(args.url))

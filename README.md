@@ -5,6 +5,7 @@ Petit script Python qui crawl un site à partir d'une URL principale et extrait 
 ## Version Streamlit
 
 Si tu déploies sur Streamlit Community Cloud, lance plutôt l'application avec `app.py`.
+Tu peux y coller une ou plusieurs URLs, une par ligne.
 
 ## Installation
 
@@ -19,6 +20,8 @@ pip install -r requirements.txt
 ```bash
 python freshness.py https://example.com
 ```
+
+Pour plusieurs sites dans l'interface Streamlit, mets une URL par ligne puis clique sur le bouton de crawl.
 
 Ou en mode Streamlit local:
 
