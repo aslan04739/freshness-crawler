@@ -1,0 +1,4 @@
+.freshness-venv/
+__pycache__/
+*.pyc
+*_dates.csv
