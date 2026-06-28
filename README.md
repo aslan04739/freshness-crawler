@@ -2,6 +2,10 @@
 
 Petit script Python qui crawl un site à partir d'une URL principale et extrait les dates de publication / modification quand elles sont présentes dans le HTML.
 
+## Version Streamlit
+
+Si tu déploies sur Streamlit Community Cloud, lance plutôt l'application avec `app.py`.
+
 ## Installation
 
 ```bash
@@ -14,6 +18,12 @@ pip install -r requirements.txt
 
 ```bash
 python freshness.py https://example.com
+```
+
+Ou en mode Streamlit local:
+
+```bash
+streamlit run app.py
 ```
 
 Si aucune URL n'est fournie, le script utilise l'URL par défaut configurée dans le code.

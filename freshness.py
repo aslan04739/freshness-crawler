@@ -137,6 +137,8 @@ def crawl_site(start_url):
     print(f"\nTerminé ! {len(results)} pages analysées.")
     print(f"Les résultats sont sauvegardés dans le fichier : {output_file}")
 
+    return df, output_file
+
 
 if __name__ == "__main__":
     args = parse_args()
